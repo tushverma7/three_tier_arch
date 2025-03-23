@@ -24,6 +24,7 @@ jobs:
 
       - name: Force Unlock State
         run: terraform force-unlock -force 48ae62fa-9c59-c831-1ff9-feabd30e78ea || true
+        working-directory: multi_tier_arch
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
