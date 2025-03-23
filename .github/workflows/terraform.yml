@@ -36,7 +36,7 @@ jobs:
         working-directory: multi_tier_arch
 
       - name: Force Unlock State
-        run: terraform force-unlock -force cb95262b-40d2-a1b1-78df-0e886ad559a4 || true
+        run: terraform force-unlock -force 980ea3d9-224a-1f56-9c2b-3732a51e54eb || true
         working-directory: multi_tier_arch
 
       - name: Terraform Plan
