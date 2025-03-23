@@ -1,11 +1,11 @@
 output "iac-secure-rg" {
   description = "The name of the resource group"
-  value       = data.azurerm_resource_group.rg.name
+  value       = azurerm_resource_group.rg.name
 }
 
 output "location" {
   description = "The location of the resource group"
-  value       = data.azurerm_resource_group.rg.location
+  value       = azurerm_resource_group.rg.location
 }
 
 # Frontend Network Interface (Add the correct resource name here)
