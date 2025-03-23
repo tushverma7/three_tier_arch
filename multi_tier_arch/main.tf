@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg" {
   location = "East US"
 }
 
- resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "vnet" {
   name                = "iac-vnet"
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   location            = data.azurerm_resource_group.existing_rg.location
