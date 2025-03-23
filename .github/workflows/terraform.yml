@@ -22,10 +22,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Force Unlock State
-        run: terraform force-unlock -force 48ae62fa-9c59-c831-1ff9-feabd30e78ea || true
-        working-directory: multi_tier_arch
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -37,6 +33,10 @@ jobs:
 
       - name: Terraform Format Check
         run: terraform fmt -check
+        working-directory: multi_tier_arch
+
+      - name: Force Unlock State
+        run: terraform force-unlock -force 48ae62fa-9c59-c831-1ff9-feabd30e78ea || true
         working-directory: multi_tier_arch
 
       - name: Terraform Plan
