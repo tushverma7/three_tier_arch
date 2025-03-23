@@ -1,18 +1,23 @@
+# 🔹 Fetch the existing resource group details
+data "azurerm_resource_group" "existing_rg" {
+  name = "iac-secure-rg" # Replace with your actual resource group name
+}
+
 resource "azurerm_resource_group" "rg" {
   name     = "iac-secure-rg"
   location = "East US"
 }
 
-resource "azurerm_virtual_network" "vnet" {
+ resource "azurerm_virtual_network" "vnet" {
   name                = "iac-vnet"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.existing_rg.name
+  location            = data.azurerm_resource_group.existing_rg.location
   address_space       = ["10.0.0.0/16"]
 }
 
 resource "azurerm_subnet" "frontend" {
   name                 = "frontend-subnet"
-  resource_group_name  = azurerm_resource_group.rg.name
+  resource_group_name  = data.azurerm_resource_group.existing_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 }
