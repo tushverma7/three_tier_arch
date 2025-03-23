@@ -35,9 +35,9 @@ jobs:
         run: terraform fmt -check
         working-directory: multi_tier_arch
 
-      - name: Force Unlock State
-        run: terraform force-unlock -force 980ea3d9-224a-1f56-9c2b-3732a51e54eb || true
-        working-directory: multi_tier_arch
+#      - name: Force Unlock State
+#        run: terraform force-unlock -force 980ea3d9-224a-1f56-9c2b-3732a51e54eb || true
+#        working-directory: multi_tier_arch
 
       - name: Terraform Plan
         run: terraform plan
