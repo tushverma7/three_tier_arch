@@ -45,7 +45,7 @@ resource "azurerm_network_security_rule" "allow_whitelisted_ips" {
   protocol                    = "*"
   source_port_range           = "*"
   destination_port_range      = "80"
-  source_address_prefixes     = ["192.168.0.101/24"] # Replace with your allowed IP
+  source_address_prefixes     = ["192.168.0.0/24"] # Replace with your allowed IP
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.frontend_nsg.name
