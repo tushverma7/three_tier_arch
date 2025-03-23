@@ -1,6 +1,5 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "iac-secure-rg"
-  location = "East US"
+data "azurerm_resource_group" "rg" {
+  name = var.resource_group_name
 }
 
 resource "azurerm_virtual_network" "vnet" {
