@@ -23,7 +23,7 @@ output "frontend_nic_id" {
 }
 
 # Frontend Public IP Address (Add the correct resource name here)
-output "frontend_public_ip" {
+output "frontend_pip" {
   description = "The public IP address of the frontend VM"
   value       = azurerm_public_ip.frontend_pip.ip_address # Check for the correct resource name
 }
