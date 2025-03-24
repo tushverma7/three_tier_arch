@@ -13,10 +13,6 @@ output "vnet_name" {
   value       = azurerm_virtual_network.vnet.name
 }
 
-output "public_ip" {
-  value = azurerm_public_ip.forntend_ip.ip_address
-}
-
 output "nsg_name" {
   value = azurerm_network_security_group.frontend_nsg.name
 }
