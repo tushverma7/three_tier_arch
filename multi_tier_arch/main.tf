@@ -71,7 +71,8 @@ resource "azurerm_network_interface" "frontend_nic" {
     name                          = "frontend-ipconfig"
     subnet_id                     = azurerm_subnet.frontend.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.frontend_pip.id
+    # Remove the public IP reference to allow deletion
+    #public_ip_address_id          = azurerm_public_ip.frontend_pip.id
   }
 }
 
