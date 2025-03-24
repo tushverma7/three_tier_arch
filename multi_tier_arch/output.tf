@@ -15,7 +15,7 @@ output "vnet_name" {
 
 output "nsg_name" {
   description = "Network Security Group name"
-  value = azurerm_network_security_group.frontend_nsg.name
+  value       = azurerm_network_security_group.frontend_nsg.name
 }
 
 output "frontend_nic_id" {
