@@ -73,6 +73,9 @@ resource "azurerm_network_interface" "frontend_nic" {
     private_ip_address_allocation = "Dynamic"
     # Remove the public IP reference to allow deletion
     #public_ip_address_id          = azurerm_public_ip.frontend_pip.id
+    
+    # Use a conditional to attach or detach the Public IP
+    public_ip_address_id = var.enable_public_ip ? azurerm_public_ip.frontend_pip.id : null
   }
 }
 

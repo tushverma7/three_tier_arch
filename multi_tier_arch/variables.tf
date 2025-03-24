@@ -9,3 +9,9 @@ variable "location" {
   type        = string
   default     = "East US"
 }
+
+variable "enable_public_ip" {
+  description = "Toggle to enable or disable the public IP association with the NIC"
+  type        = bool
+  default     = true
+}
