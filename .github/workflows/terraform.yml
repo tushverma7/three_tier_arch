@@ -29,25 +29,21 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
-        working-directory: multi_tier_arch
+        working-directory: three_tier_arch
 
       - name: Terraform Format Check
         run: terraform fmt -check
-        working-directory: multi_tier_arch
+        working-directory: three_tier_arch
 
       - name: Terraform output check
         run: terraform output
-        working-directory: multi_tier_arch
+        working-directory: three_tier_arch
           
- #     - name: Force Unlock State
- #       run: terraform force-unlock -force 980ea3d9-224a-1f56-9c2b-3732a51e54eb || true
- #       working-directory: multi_tier_arch
-
       - name: Terraform Plan
         run: terraform plan
-        working-directory: multi_tier_arch
+        working-directory: three_tier_arch
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'  # Only applies changes on main branch
         run: terraform apply -auto-approve
-        working-directory: multi_tier_arch
+        working-directory: three_tier_arch
